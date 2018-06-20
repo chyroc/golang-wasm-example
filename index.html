@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>WebAssembly Example</title>
+    <title>加1减1</title>
     <script src="wasm_exec.js"></script>
     <script type="text/javascript">
         function fetchAndInstantiate(url, importObject) {
@@ -12,18 +12,22 @@
                     results.instance
             );
         }
+
         var go = new Go();
         var mod = fetchAndInstantiate("./example.wasm", go.importObject);
-        window.onload = function() {
-            mod.then(function(instance) {
+        window.onload = function () {
+            mod.then(function (instance) {
                 go.run(instance);
             });
         };
     </script>
 </head>
 <body>
+<br>
+<div>加1减1</div>
+<br>
 <button id="minus" type="button" disabled=true>-</button>
-<div id="number">0</div>
+<span id="number">0</span>
 <button id="plus" type="button" disabled=true>+</button>
 </body>
 </html>
