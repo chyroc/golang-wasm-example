@@ -2,13 +2,17 @@
 
 本项目的线上地址：https://blog.chyroc.cn/golang-wasm-example/
 
-## build wasm
+## build go
 ```
-GOARCH=wasm GOOS=js /path/go/bin/go build -o example.wasm wasm.go
+git clone http://github.com/golang/go /path/go
+cd /path/go/src
+./make.bash
 ```
 
-## server html
+## build wasm and server
 ```
+git clone https://github.com/Chyroc/golang-wasm-example
+GOARCH=wasm GOOS=js /path/go/bin/go build -o example.wasm wasm.go
 npm install http-server -g // 安装依赖
 http-server
 ```
