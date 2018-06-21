@@ -12,9 +12,18 @@ cd /path/go/src
 ## build wasm and server
 ```
 git clone https://github.com/Chyroc/golang-wasm-example
-GOARCH=wasm GOOS=js /path/go/bin/go build -o example.wasm wasm.go
 npm install http-server -g // 安装依赖
-http-server
+./run.sh
 ```
 
-然后访问：http://127.0.0.1:8080 ，就可以看见加1减1的界面了~
+然后访问：http://127.0.0.1:8080 ，就可以看见加1和坦克游戏的界面了~
+
+## 子项目
+
+### 加1
+
+![plus-one](http://recordit.co/08BYIUCJ5X.gif)
+
+### 坦克游戏
+
+![tank](http://g.recordit.co/Uq3qxUgVu1.gif)
