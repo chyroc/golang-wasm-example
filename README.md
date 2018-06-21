@@ -22,8 +22,12 @@ npm install http-server -g // 安装依赖
 
 ### 加1
 
+[点击访问](https://blog.chyroc.cn/golang-wasm-example/plus-one/)
+
 ![plus-one](http://recordit.co/08BYIUCJ5X.gif)
 
 ### 坦克游戏
+
+[点击访问](https://blog.chyroc.cn/golang-wasm-example/tank/)
 
 ![tank](http://g.recordit.co/Uq3qxUgVu1.gif)
