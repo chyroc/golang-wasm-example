@@ -11,13 +11,13 @@ import (
 	"syscall/js"
 	"time"
 
-	"github.com/Chyroc/webapi"
+	"github.com/Chyroc/web"
 )
 
 func init() {
 	rand.Seed(time.Now().Unix())
 
-	webapi.Document.AddEventListener("keydown", func(args []js.Value) {
+	web.Document.AddEventListener("keydown", func(args []js.Value) {
 		if len(args) > 0 {
 			keyCode := args[0].Get("keyCode").Int()
 			switch keyCode {
@@ -31,7 +31,7 @@ func init() {
 		}
 	})
 
-	webapi.Document.AddEventListener("keyup", func(args []js.Value) {
+	web.Document.AddEventListener("keyup", func(args []js.Value) {
 		if len(args) > 0 {
 			keyCode := args[0].Get("keyCode").Int()
 			switch keyCode {
@@ -62,8 +62,8 @@ type block struct {
 }
 
 type tankGame struct {
-	canvas webapi.HTMLCanvasElement
-	ctx    webapi.CanvasRenderingContext2D
+	canvas web.HTMLCanvasElement
+	ctx    web.CanvasRenderingContext2D
 
 	player_lives int
 	score        int
@@ -107,7 +107,7 @@ func newTankGame() *tankGame {
 
 		monster_speed: 0.6,
 	}
-	t.canvas = webapi.Document.GetElementById("canvas").(webapi.HTMLCanvasElement)
+	t.canvas = web.Document.GetElementById("canvas").(web.HTMLCanvasElement)
 	t.ctx = t.canvas.GetContext("2d")
 	t.tank = block{float64(t.canvas.Width()) / 2, float64(t.canvas.Height()) - 70, t.tank_width, t.tank_height}
 
@@ -396,12 +396,12 @@ func draw() {
 		game.create_monster()
 	}
 	if !game.tank_block_collision_bool && game.player_lives < 0 {
-		webapi.Window.Alert("you lost.")
-		webapi.Document.Location().Reload()
+		web.Window.Alert("you lost.")
+		web.Document.Location().Reload()
 		return
 	}
 
-	webapi.Window.RequestAnimationFrame(js.NewCallback(func(args []js.Value) {
+	web.Window.RequestAnimationFrame(js.NewCallback(func(args []js.Value) {
 		draw()
 	}))
 }
