@@ -49,10 +49,6 @@ func changeGender(genderDom web.HTMLSelectElement) {
 	}
 }
 
-func fakeCallback(func()) {
-
-}
-
 func main() {
 	generateButtonDom := web.Document.GetElementById("generate")
 	imgDom := web.Document.GetElementById("img")
