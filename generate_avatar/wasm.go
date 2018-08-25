@@ -20,11 +20,7 @@ var gender = govatar.MALE
 
 func generateAvator(name string) (string, error) {
 	if name == "" {
-		u, err := uuid.NewV4()
-		if err != nil {
-			return "", err
-		}
-		name = u.String()
+		name = uuid.NewV4().String()
 	}
 
 	img, err := govatar.GenerateFromUsername(gender, name)

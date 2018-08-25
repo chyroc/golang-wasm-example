@@ -4,16 +4,14 @@
 
 国内用户可以访问：https://chyroc.coding.me/golang-wasm-example/
 
-## build go
-```
-git clone http://github.com/golang/go /path/go
-cd /path/go/src
-./make.bash
-```
+## dep
+
+* go 1.11([start from here](https://golang.org/doc/install))
 
 ## build wasm and server
 ```
 git clone https://github.com/Chyroc/golang-wasm-example
+export GO111MODULE=on && go mod vendor
 npm install http-server -g // 安装依赖
 ./run.sh
 ```

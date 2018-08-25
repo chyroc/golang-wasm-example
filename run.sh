@@ -12,7 +12,7 @@ do
             if [ $file != "public" ]
             then
                 echo "build ./"$file" .wasm file..."
-                GOARCH=wasm GOOS=js /usr/local/Cellar/go/dev/bin/go build -o $file"/"example.wasm $file"/"wasm.go
+                GOARCH=wasm GOOS=js go build -o $file"/"example.wasm $file"/"wasm.go
             fi
         fi
     fi

@@ -42,9 +42,9 @@ func draw(imgDom web.HTMLElement, number int) {
 }
 
 func main() {
-	var numberDoc = js.Global.Get("document").Call("getElementById", "number")
-	var plus = js.Global.Get("document").Call("getElementById", "plus")
-	var minus = js.Global.Get("document").Call("getElementById", "minus")
+	var numberDoc = js.Global().Get("document").Call("getElementById", "number")
+	var plus = js.Global().Get("document").Call("getElementById", "plus")
+	var minus = js.Global().Get("document").Call("getElementById", "minus")
 	var imgDom = web.Document.GetElementById("img")
 	var number = 50
 
